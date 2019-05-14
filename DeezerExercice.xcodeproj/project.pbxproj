@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF63AB228B0012003529B2 /* AppDelegate.swift */; };
-		2FFF63AE228B0012003529B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF63AD228B0012003529B2 /* ViewController.swift */; };
 		2FFF63B1228B0012003529B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63AF228B0012003529B2 /* Main.storyboard */; };
 		2FFF63B3228B0014003529B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B2228B0014003529B2 /* Assets.xcassets */; };
 		2FFF63B6228B0014003529B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */; };
-		2FFF63C1228B0014003529B2 /* DeezerExerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF63C0228B0014003529B2 /* DeezerExerciceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +26,11 @@
 /* Begin PBXFileReference section */
 		2FFF63A8228B0012003529B2 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFF63AB228B0012003529B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FFF63AD228B0012003529B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FFF63B0228B0012003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FFF63B2228B0014003529B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FFF63B5228B0014003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FFF63B7228B0014003529B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FFF63BC228B0014003529B2 /* DeezerExerciceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeezerExerciceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FFF63C0228B0014003529B2 /* DeezerExerciceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeezerExerciceTests.swift; sourceTree = "<group>"; };
 		2FFF63C2228B0014003529B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,12 +73,8 @@
 		2FFF63AA228B0012003529B2 /* DeezerExercice */ = {
 			isa = PBXGroup;
 			children = (
-				2FFF63AB228B0012003529B2 /* AppDelegate.swift */,
-				2FFF63AD228B0012003529B2 /* ViewController.swift */,
-				2FFF63AF228B0012003529B2 /* Main.storyboard */,
-				2FFF63B2228B0014003529B2 /* Assets.xcassets */,
-				2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */,
-				2FFF63B7228B0014003529B2 /* Info.plist */,
+				2FFF63CB228B0090003529B2 /* Sources */,
+				2FFF63CC228B0095003529B2 /* Ressources */,
 			);
 			path = DeezerExercice;
 			sourceTree = "<group>";
@@ -90,10 +82,28 @@
 		2FFF63BF228B0014003529B2 /* DeezerExerciceTests */ = {
 			isa = PBXGroup;
 			children = (
-				2FFF63C0228B0014003529B2 /* DeezerExerciceTests.swift */,
 				2FFF63C2228B0014003529B2 /* Info.plist */,
 			);
 			path = DeezerExerciceTests;
+			sourceTree = "<group>";
+		};
+		2FFF63CB228B0090003529B2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2FFF63AB228B0012003529B2 /* AppDelegate.swift */,
+				2FFF63AF228B0012003529B2 /* Main.storyboard */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2FFF63CC228B0095003529B2 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				2FFF63B2228B0014003529B2 /* Assets.xcassets */,
+				2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */,
+				2FFF63B7228B0014003529B2 /* Info.plist */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +207,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FFF63AE228B0012003529B2 /* ViewController.swift in Sources */,
 				2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FFF63C1228B0014003529B2 /* DeezerExerciceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DeezerExercice/Info.plist;
+				INFOPLIST_FILE = DeezerExercice/Ressources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DeezerExercice/Info.plist;
+				INFOPLIST_FILE = DeezerExercice/Ressources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
