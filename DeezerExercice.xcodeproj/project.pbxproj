@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		2F77BD9A228B129F00DCCE7A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */; };
 		2F77BD9C228B131B00DCCE7A /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */; };
+		2F77BD9E228B1F3F00DCCE7A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */; };
 		2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF63AB228B0012003529B2 /* AppDelegate.swift */; };
-		2FFF63B1228B0012003529B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63AF228B0012003529B2 /* Main.storyboard */; };
+		2FFF63B1228B0012003529B2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63AF228B0012003529B2 /* Search.storyboard */; };
 		2FFF63B3228B0014003529B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B2228B0014003529B2 /* Assets.xcassets */; };
 		2FFF63B6228B0014003529B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -28,9 +29,10 @@
 /* Begin PBXFileReference section */
 		2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
+		2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2FFF63A8228B0012003529B2 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFF63AB228B0012003529B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FFF63B0228B0012003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FFF63B0228B0012003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		2FFF63B2228B0014003529B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FFF63B5228B0014003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FFF63B7228B0014003529B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F77BD9F228B1FC300DCCE7A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */,
+				2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */,
+				2FFF63AF228B0012003529B2 /* Search.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		2FFF639F228B0012003529B2 = {
 			isa = PBXGroup;
 			children = (
@@ -95,9 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				2FFF63AB228B0012003529B2 /* AppDelegate.swift */,
-				2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */,
-				2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */,
-				2FFF63AF228B0012003529B2 /* Main.storyboard */,
+				2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */,
+				2F77BD9F228B1FC300DCCE7A /* Search */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -195,7 +206,7 @@
 			files = (
 				2FFF63B6228B0014003529B2 /* LaunchScreen.storyboard in Resources */,
 				2FFF63B3228B0014003529B2 /* Assets.xcassets in Resources */,
-				2FFF63B1228B0012003529B2 /* Main.storyboard in Resources */,
+				2FFF63B1228B0012003529B2 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F77BD9E228B1F3F00DCCE7A /* AppCoordinator.swift in Sources */,
 				2F77BD9A228B129F00DCCE7A /* ArtistSearchViewController.swift in Sources */,
 				2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */,
 				2F77BD9C228B131B00DCCE7A /* ArtistDetailsViewController.swift in Sources */,
@@ -237,12 +249,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2FFF63AF228B0012003529B2 /* Main.storyboard */ = {
+		2FFF63AF228B0012003529B2 /* Search.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2FFF63B0228B0012003529B2 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 		2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */ = {
