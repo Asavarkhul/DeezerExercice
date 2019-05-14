@@ -13,7 +13,7 @@
         <!--Artist Search-->
         <scene sceneID="hBR-p7-GjZ">
             <objects>
-                <viewController id="m54-eZ-XL2" customClass="DZRArtistSearchViewController" sceneMemberID="viewController">
+                <viewController id="m54-eZ-XL2" customClass="ArtistSearchViewController" customModule="DeezerExercice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TNG-EJ-1JY"/>
                         <viewControllerLayoutGuide type="bottom" id="DzF-T3-SwV"/>
@@ -106,6 +106,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyS-vW-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="163.39285714285714"/>
+        </scene>
+        <!--Artist Details View Controller-->
+        <scene sceneID="XqZ-RE-bHp">
+            <objects>
+                <viewController id="Ynd-YF-qIY" customClass="ArtistDetailsViewController" customModule="DeezerExercice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3EI-J4-xSS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WAc-gI-KA1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="78" id="61T-mf-NUp" userLabel="Track">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61T-mf-NUp" id="3qr-zw-rmD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-22-yTR">
+                                                    <rect key="frame" x="8" y="8" width="398" height="61.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-hi-csf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="28" height="61.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8Gj-Xq-coe">
+                                                            <rect key="frame" x="50" y="0.0" width="294" height="61.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Phantom of the opera" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-Dh-yHo">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240.5" height="43.5"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron Maiden" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVW-W7-IeG">
+                                                                    <rect key="frame" x="0.0" y="43.5" width="80.5" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0B-Ny-51A">
+                                                            <rect key="frame" x="366" y="0.0" width="32" height="61.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <state key="normal" title="Play"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6AW-22-yTR" firstAttribute="leading" secondItem="3qr-zw-rmD" secondAttribute="leading" constant="8" id="045-GF-GxY"/>
+                                                <constraint firstItem="6AW-22-yTR" firstAttribute="top" secondItem="3qr-zw-rmD" secondAttribute="top" constant="8" id="3cs-xq-BcE"/>
+                                                <constraint firstAttribute="bottom" secondItem="6AW-22-yTR" secondAttribute="bottom" constant="8" id="B5x-0T-l8b"/>
+                                                <constraint firstAttribute="trailing" secondItem="6AW-22-yTR" secondAttribute="trailing" constant="8" id="Wvu-Cd-Wap"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SVx-wb-9AU" firstAttribute="bottom" secondItem="WAc-gI-KA1" secondAttribute="bottom" id="34B-jt-NqH"/>
+                            <constraint firstItem="WAc-gI-KA1" firstAttribute="leading" secondItem="SVx-wb-9AU" secondAttribute="leading" id="96v-VK-CqL"/>
+                            <constraint firstItem="WAc-gI-KA1" firstAttribute="top" secondItem="SVx-wb-9AU" secondAttribute="top" id="NAi-Ph-Zz5"/>
+                            <constraint firstItem="SVx-wb-9AU" firstAttribute="trailing" secondItem="WAc-gI-KA1" secondAttribute="trailing" id="m8h-lF-lkA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SVx-wb-9AU"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4w-Zn-VzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495.6521739130435" y="162.72321428571428"/>
         </scene>
     </scenes>
 </document>
