@@ -30,7 +30,7 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
     
     func getArtists(for name: String, success: @escaping ([Artist]) -> Void, failure: @escaping (() -> Void)) {
 
-        let request = URLRequest(url: URL(string: "https://api.deezer.com/search?q=\(name)")!)
+        let request = URLRequest(url: URL(string: "https://api.deezer.com/search/artist?q=\(name)")!)
         
         networkClient
             .executeTask(request, cancelledBy: cancellationToken)

@@ -27,14 +27,12 @@ final class AppCoordinator {
     
     // MARK: - Coordinator
     func start() {
-        presenter = UIWindow(frame: UIScreen.main.bounds)
         presenter.rootViewController = UIViewController()
-        presenter.makeKeyAndVisible()
-        
+
         if ProcessInfo.processInfo.environment["IS_RUNNING_UNIT_TESTS"] == "YES" {
             return
         }
-        
+
         showSearch()
     }
     

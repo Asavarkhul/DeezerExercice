@@ -38,7 +38,12 @@ final class ArtistSearchViewController: UIViewController {
     }
 
     private func bind(to viewModel: ArtistSearchViewModel) {
-        
+        viewModel.visibleItems = { [weak self] visibleItems in
+            self?.source.update(with: visibleItems)
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
     }
 
     // MARK: - Actions

@@ -10,5 +10,12 @@ import Foundation
 
 struct Artist: Codable {
     let id: Int
-    let title: String
+    let name: String
+    let pictureURLString: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case pictureURLString = "picture_small"
+    }
 }

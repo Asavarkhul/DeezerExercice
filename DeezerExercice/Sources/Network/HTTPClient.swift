@@ -65,5 +65,17 @@ final class ExecutableRequest {
             }
         }
     }
+
+    public func processDataResponse(callback: @escaping (HTTPResponse<Data>) -> Void) {
+        responsePromise.observe { (result) in
+            switch result {
+            case .value(let data, let statusCode):
+                let object = data
+                callback(HTTPResponse(result: .success(object), originalData: data, statusCode: statusCode))
+            case .error(let error, let data, let statusCode):
+                callback(HTTPResponse(result: .failure(error), originalData: data, statusCode: statusCode))
+            }
+        }
+    }
 }
 
