@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var coordinator: AppCoordinator!
+    var context: Context!
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        coordinator = AppCoordinator(appDelegate: self)
+
+        let client = HTTPClient(engine: .urlSession(.default))
+        context = Context(networkClient: client)
+
+        coordinator = AppCoordinator(presenter: window!,
+                                     context: context)
         coordinator.start()
         return true
     }

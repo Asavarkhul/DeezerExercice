@@ -12,19 +12,24 @@ final class AppCoordinator {
     
     // MARK: - Private properties
 
-    private unowned var appDelegate: AppDelegate
+    private var presenter: UIWindow
+
+    private let context: Context
+
+    private var artistSearchCoordinator: ArtistSearchCoordinator?
     
     // MARK: - Initializer
 
-    init(appDelegate: AppDelegate) {
-        self.appDelegate = appDelegate
+    init(presenter: UIWindow, context: Context) {
+        self.presenter = presenter
+        self.context = context
     }
     
     // MARK: - Coordinator
     func start() {
-        appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-        appDelegate.window!.rootViewController = UIViewController()
-        appDelegate.window!.makeKeyAndVisible()
+        presenter = UIWindow(frame: UIScreen.main.bounds)
+        presenter.rootViewController = UIViewController()
+        presenter.makeKeyAndVisible()
         
         if ProcessInfo.processInfo.environment["IS_RUNNING_UNIT_TESTS"] == "YES" {
             return
@@ -34,6 +39,7 @@ final class AppCoordinator {
     }
     
     private func showSearch() {
-        
+        artistSearchCoordinator = ArtistSearchCoordinator(presenter: presenter, context: context)
+        artistSearchCoordinator?.start()
     }
 }

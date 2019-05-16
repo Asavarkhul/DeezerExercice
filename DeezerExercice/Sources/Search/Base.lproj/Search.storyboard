@@ -13,7 +13,7 @@
         <!--Artist Search-->
         <scene sceneID="hBR-p7-GjZ">
             <objects>
-                <viewController storyboardIdentifier="ArtiestSearchViewController" id="m54-eZ-XL2" customClass="ArtistSearchViewController" customModule="DeezerExercice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArtistSearchViewController" id="m54-eZ-XL2" customClass="ArtistSearchViewController" customModule="DeezerExercice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TNG-EJ-1JY"/>
                         <viewControllerLayoutGuide type="bottom" id="DzF-T3-SwV"/>
@@ -22,18 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Enter an artist name" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-iu-QXO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ZZV-sM-zke"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="m54-eZ-XL2" id="RTC-TX-f4c"/>
-                                </connections>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bh7-Ue-aGJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="52" width="414" height="810"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QTe-16-ggT">
                                     <size key="itemSize" width="80" height="120"/>
@@ -78,29 +68,18 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="m54-eZ-XL2" id="pAk-RS-wpZ"/>
-                                    <outlet property="delegate" destination="m54-eZ-XL2" id="hJl-au-0qj"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bh7-Ue-aGJ" firstAttribute="top" secondItem="3g3-iu-QXO" secondAttribute="bottom" id="2Zs-uE-Iob"/>
-                            <constraint firstAttribute="trailing" secondItem="bh7-Ue-aGJ" secondAttribute="trailing" id="2a0-ue-vaG"/>
-                            <constraint firstAttribute="bottom" secondItem="bh7-Ue-aGJ" secondAttribute="bottom" constant="34" id="8L2-tK-CCd"/>
-                            <constraint firstItem="3g3-iu-QXO" firstAttribute="top" secondItem="oEW-qR-O1A" secondAttribute="top" id="MV9-Lp-T8A"/>
-                            <constraint firstItem="3g3-iu-QXO" firstAttribute="leading" secondItem="alM-5c-CUo" secondAttribute="leading" id="Rbx-9j-dbY"/>
-                            <constraint firstItem="bh7-Ue-aGJ" firstAttribute="leading" secondItem="alM-5c-CUo" secondAttribute="leading" id="iBG-xv-HSL"/>
-                            <constraint firstAttribute="trailing" secondItem="3g3-iu-QXO" secondAttribute="trailing" id="yZC-hB-ZQ1"/>
+                            <constraint firstItem="oEW-qR-O1A" firstAttribute="trailing" secondItem="bh7-Ue-aGJ" secondAttribute="trailing" id="IYT-cA-tFS"/>
+                            <constraint firstItem="bh7-Ue-aGJ" firstAttribute="leading" secondItem="oEW-qR-O1A" secondAttribute="leading" id="Qzj-rl-hNj"/>
+                            <constraint firstItem="oEW-qR-O1A" firstAttribute="bottom" secondItem="bh7-Ue-aGJ" secondAttribute="bottom" id="aeL-DQ-Twc"/>
+                            <constraint firstItem="bh7-Ue-aGJ" firstAttribute="top" secondItem="oEW-qR-O1A" secondAttribute="top" constant="8" id="gqA-ze-fRI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oEW-qR-O1A"/>
                     </view>
                     <navigationItem key="navigationItem" title="Artist Search" id="lWR-cX-lFj"/>
-                    <connections>
-                        <outlet property="collectionView" destination="bh7-Ue-aGJ" id="0of-28-Aoz"/>
-                        <outlet property="searchBar" destination="3g3-iu-QXO" id="nrF-hl-4Sn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyS-vW-3ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
