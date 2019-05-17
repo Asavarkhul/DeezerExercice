@@ -12,7 +12,7 @@ final class Screens {
 
     // MARK: - Properties
 
-    private let storyBoard = UIStoryboard(name: "Search", bundle: Bundle(for: Screens.self))
+    private let artistStoryBoard = UIStoryboard(name: "Artist", bundle: Bundle(for: Screens.self))
 
     private let context: Context
 
@@ -25,13 +25,26 @@ final class Screens {
 
 // MARK: - Search
 
+protocol ArtistSearchScreenDelegate: class {
+    func artistSearchScreenDidSelectArtist(for id: Int)
+}
+
 extension Screens {
-    func createSearchViewController() -> UIViewController {
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "ArtistSearchViewController") as! ArtistSearchViewController
+    func createArtistSearchViewController(delegate: ArtistSearchScreenDelegate?) -> UIViewController {
+        let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "ArtistSearchViewController") as! ArtistSearchViewController
         let repository = ArtistSearchRepository(networkClient: context.networkClient)
-        let viewModel = ArtistSearchViewModel(repository: repository)
+        let viewModel = ArtistSearchViewModel(repository: repository, delegate: delegate)
         viewController.viewModel = viewModel
         viewController.imageProvider = context.imageProvider
+        return viewController
+    }
+}
+
+// MARK: - Details
+
+extension Screens {
+    func createArtistDetailsViewController() -> UIViewController {
+        let viewController = artistStoryBoard.instantiateViewController(withIdentifier: "ArtistDetailsViewController") as! ArtistDetailsViewController
         return viewController
     }
 }

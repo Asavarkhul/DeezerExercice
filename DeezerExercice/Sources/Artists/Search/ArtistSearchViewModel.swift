@@ -27,6 +27,8 @@ final class ArtistSearchViewModel {
         }
     }
 
+    private weak var delegate: ArtistSearchScreenDelegate?
+
     // MARK: - Properties
 
     enum VisibleItem: Equatable {
@@ -43,8 +45,9 @@ final class ArtistSearchViewModel {
 
     // MARK: - Initializer
 
-    init(repository: ArtistSearchRepositoryType) {
+    init(repository: ArtistSearchRepositoryType, delegate: ArtistSearchScreenDelegate?) {
         self.repository = repository
+        self.delegate = delegate
     }
 
     // MARK: - Outputs
@@ -63,7 +66,7 @@ final class ArtistSearchViewModel {
             self?._items = ArtistSearchViewModel.initialItems(from: artists)
             self?.isLoading?(false)
         }, failure: { [weak self] in
-            self?.navigateTo?(.alert(title: "Alert", message: "A bad thing happened.. 🙈"))
+            self?.navigateTo?(.alert(title: "Alert", message: "A very very bad thing happened.. 🙈"))
             self?.isLoading?(false)
         })
     }
@@ -77,7 +80,14 @@ final class ArtistSearchViewModel {
     }
 
     func didSelectItem(at index: Int) {
-        
+        guard index < _items.count else {
+            return
+        }
+
+        let artistItem = _items[index]
+        if case .artist(artistItem: let artist) = artistItem {
+            delegate?.artistSearchScreenDidSelectArtist(for: artist.id)
+        }
     }
 }
 

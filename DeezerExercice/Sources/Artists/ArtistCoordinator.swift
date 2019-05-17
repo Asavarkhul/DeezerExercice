@@ -1,5 +1,5 @@
 //
-//  ArtistSearchCoordinator.swift
+//  ArtistCoordinator.swift
 //  DeezerExercice
 //
 //  Created by Bertrand BLOC'H on 14/05/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ArtistSearchCoordinator {
+final class ArtistCoordinator {
 
     // MARK: - Properties
 
@@ -35,8 +35,22 @@ final class ArtistSearchCoordinator {
         showSearch()
     }
 
+    // MARK: - Artist Search
+
     private func showSearch() {
-        let viewController = screens.createSearchViewController()
+        let viewController = screens.createArtistSearchViewController(delegate: self)
         navigationController.viewControllers = [viewController]
+    }
+
+    // MARK: - Artist Details
+
+    private func showDetails() {
+        
+    }
+}
+
+extension ArtistCoordinator: ArtistSearchScreenDelegate {
+    func artistSearchScreenDidSelectArtist(for id: Int) {
+        
     }
 }

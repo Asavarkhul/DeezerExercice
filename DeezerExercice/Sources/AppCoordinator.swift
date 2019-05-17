@@ -16,7 +16,7 @@ final class AppCoordinator {
 
     private let context: Context
 
-    private var artistSearchCoordinator: ArtistSearchCoordinator?
+    private var artistSearchCoordinator: ArtistCoordinator?
     
     // MARK: - Initializer
 
@@ -37,7 +37,7 @@ final class AppCoordinator {
     }
     
     private func showSearch() {
-        artistSearchCoordinator = ArtistSearchCoordinator(presenter: presenter, context: context)
+        artistSearchCoordinator = ArtistCoordinator(presenter: presenter, context: context)
         artistSearchCoordinator?.start()
     }
 }

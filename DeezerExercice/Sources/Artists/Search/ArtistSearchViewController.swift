@@ -49,7 +49,4 @@ final class ArtistSearchViewController: UIViewController {
             }
         }
     }
-
-    // MARK: - Actions
-
 }

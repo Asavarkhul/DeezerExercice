@@ -45,6 +45,3 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
         }
     }
 }
-
-
-

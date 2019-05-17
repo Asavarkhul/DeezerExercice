@@ -19,9 +19,13 @@
 		2F77BD9A228B129F00DCCE7A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */; };
 		2F77BD9C228B131B00DCCE7A /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */; };
 		2F77BD9E228B1F3F00DCCE7A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */; };
+		2F7B05C5228ECEBE0046559B /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B05C4228ECEBE0046559B /* TrackTableViewCell.swift */; };
+		2F7B05C7228ECEE50046559B /* ArtistDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B05C6228ECEE50046559B /* ArtistDetailsViewModel.swift */; };
+		2F7B05C9228ECEF00046559B /* ArtistDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B05C8228ECEF00046559B /* ArtistDetailsDataSource.swift */; };
+		2F7B05CB228ECEFA0046559B /* ArtistDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B05CA228ECEFA0046559B /* ArtistDetailsRepository.swift */; };
+		2F7B05D0228ECF680046559B /* ArtistCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7B05CF228ECF680046559B /* ArtistCoordinator.swift */; };
 		2F859AAB228B5964001277CB /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AAA228B5964001277CB /* Screens.swift */; };
 		2F859AAD228B5A34001277CB /* ArtistSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AAC228B5A34001277CB /* ArtistSearchViewModel.swift */; };
-		2F859AAF228B5AD9001277CB /* ArtistSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AAE228B5AD9001277CB /* ArtistSearchCoordinator.swift */; };
 		2F859AB2228B5BF8001277CB /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AB1228B5BF8001277CB /* HTTPClient.swift */; };
 		2FBE3CD3228D9C570057CE42 /* ArtistInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CD2228D9C570057CE42 /* ArtistInfos.swift */; };
 		2FBE3CD5228DA0AF0057CE42 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CD4228DA0AF0057CE42 /* Context.swift */; };
@@ -32,7 +36,7 @@
 		2FBE3CE0228DBA770057CE42 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CDF228DBA770057CE42 /* Utilities.swift */; };
 		2FBE3CE3228DBC530057CE42 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CE2228DBC530057CE42 /* HTTPClientTests.swift */; };
 		2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFF63AB228B0012003529B2 /* AppDelegate.swift */; };
-		2FFF63B1228B0012003529B2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63AF228B0012003529B2 /* Search.storyboard */; };
+		2FFF63B1228B0012003529B2 /* Artist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63AF228B0012003529B2 /* Artist.storyboard */; };
 		2FFF63B3228B0014003529B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B2228B0014003529B2 /* Assets.xcassets */; };
 		2FFF63B6228B0014003529B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -60,9 +64,13 @@
 		2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
 		2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2F7B05C4228ECEBE0046559B /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		2F7B05C6228ECEE50046559B /* ArtistDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewModel.swift; sourceTree = "<group>"; };
+		2F7B05C8228ECEF00046559B /* ArtistDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsDataSource.swift; sourceTree = "<group>"; };
+		2F7B05CA228ECEFA0046559B /* ArtistDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsRepository.swift; sourceTree = "<group>"; };
+		2F7B05CF228ECF680046559B /* ArtistCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistCoordinator.swift; sourceTree = "<group>"; };
 		2F859AAA228B5964001277CB /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		2F859AAC228B5A34001277CB /* ArtistSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewModel.swift; sourceTree = "<group>"; };
-		2F859AAE228B5AD9001277CB /* ArtistSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchCoordinator.swift; sourceTree = "<group>"; };
 		2F859AB1228B5BF8001277CB /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		2FBE3CD2228D9C570057CE42 /* ArtistInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistInfos.swift; sourceTree = "<group>"; };
 		2FBE3CD4228DA0AF0057CE42 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
@@ -74,7 +82,7 @@
 		2FBE3CE2228DBC530057CE42 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		2FFF63A8228B0012003529B2 /* DeezerExercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeezerExercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FFF63AB228B0012003529B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FFF63B0228B0012003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		2FFF63B0228B0012003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Artist.storyboard; sourceTree = "<group>"; };
 		2FFF63B2228B0014003529B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FFF63B5228B0014003529B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FFF63B7228B0014003529B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,23 +139,51 @@
 		2F0F0393228D82FA00483A91 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				2F7B05C2228ECE9B0046559B /* Cells */,
+				2F7B05C3228ECEA10046559B /* Models */,
 				2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */,
+				2F7B05C8228ECEF00046559B /* ArtistDetailsDataSource.swift */,
+				2F7B05C6228ECEE50046559B /* ArtistDetailsViewModel.swift */,
+				2F7B05CA228ECEFA0046559B /* ArtistDetailsRepository.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
 		};
-		2F77BD9F228B1FC300DCCE7A /* Search */ = {
+		2F77BD9F228B1FC300DCCE7A /* Artists */ = {
 			isa = PBXGroup;
 			children = (
+				2F7B05CC228ECF320046559B /* Search */,
 				2F0F0393228D82FA00483A91 /* Details */,
+				2F7B05CF228ECF680046559B /* ArtistCoordinator.swift */,
+				2FFF63AF228B0012003529B2 /* Artist.storyboard */,
+			);
+			path = Artists;
+			sourceTree = "<group>";
+		};
+		2F7B05C2228ECE9B0046559B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2F7B05C4228ECEBE0046559B /* TrackTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2F7B05C3228ECEA10046559B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F7B05CC228ECF320046559B /* Search */ = {
+			isa = PBXGroup;
+			children = (
 				2FBE3CD8228DB06A0057CE42 /* Cells */,
 				2F0F0385228D472E00483A91 /* Models */,
 				2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */,
 				2FBE3CD6228DA3A40057CE42 /* ArtistSearchDataSource.swift */,
 				2F859AAC228B5A34001277CB /* ArtistSearchViewModel.swift */,
 				2F0F0391228D82DB00483A91 /* ArtistSearchRepository.swift */,
-				2F859AAE228B5AD9001277CB /* ArtistSearchCoordinator.swift */,
-				2FFF63AF228B0012003529B2 /* Search.storyboard */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -225,7 +261,7 @@
 				2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */,
 				2FBE3CD4228DA0AF0057CE42 /* Context.swift */,
 				2F859AAA228B5964001277CB /* Screens.swift */,
-				2F77BD9F228B1FC300DCCE7A /* Search */,
+				2F77BD9F228B1FC300DCCE7A /* Artists */,
 				2F0F0380228BF53D00483A91 /* Images */,
 				2F859AB0228B5BEA001277CB /* Network */,
 			);
@@ -326,7 +362,7 @@
 			files = (
 				2FFF63B6228B0014003529B2 /* LaunchScreen.storyboard in Resources */,
 				2FFF63B3228B0014003529B2 /* Assets.xcassets in Resources */,
-				2FFF63B1228B0012003529B2 /* Search.storyboard in Resources */,
+				2FFF63B1228B0012003529B2 /* Artist.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,13 +380,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F7B05C9228ECEF00046559B /* ArtistDetailsDataSource.swift in Sources */,
+				2F7B05C7228ECEE50046559B /* ArtistDetailsViewModel.swift in Sources */,
 				2F77BD9E228B1F3F00DCCE7A /* AppCoordinator.swift in Sources */,
 				2F859AAB228B5964001277CB /* Screens.swift in Sources */,
 				2F859AB2228B5BF8001277CB /* HTTPClient.swift in Sources */,
 				2FBE3CDA228DB0790057CE42 /* ArtistCollectionViewCell.swift in Sources */,
 				2F77BD9A228B129F00DCCE7A /* ArtistSearchViewController.swift in Sources */,
 				2F0F0392228D82DB00483A91 /* ArtistSearchRepository.swift in Sources */,
-				2F859AAF228B5AD9001277CB /* ArtistSearchCoordinator.swift in Sources */,
 				2FFF63AC228B0012003529B2 /* AppDelegate.swift in Sources */,
 				2F0F038B228D63EE00483A91 /* RequestCancellationToken.swift in Sources */,
 				2F0F038E228D641700483A91 /* HTTPEngine.swift in Sources */,
@@ -358,13 +395,16 @@
 				2FBE3CD7228DA3A40057CE42 /* ArtistSearchDataSource.swift in Sources */,
 				2F0F0384228C655F00483A91 /* Promise.swift in Sources */,
 				2F154F94228EB30600FEE98E /* ImageRepository.swift in Sources */,
+				2F7B05CB228ECEFA0046559B /* ArtistDetailsRepository.swift in Sources */,
 				2F859AAD228B5A34001277CB /* ArtistSearchViewModel.swift in Sources */,
 				2FBE3CD3228D9C570057CE42 /* ArtistInfos.swift in Sources */,
 				2F0F0382228BF5C100483A91 /* ImageProvider.swift in Sources */,
 				2F0F0390228D826100483A91 /* HTTPResponse.swift in Sources */,
 				2FBE3CD5228DA0AF0057CE42 /* Context.swift in Sources */,
+				2F7B05D0228ECF680046559B /* ArtistCoordinator.swift in Sources */,
 				2F0F0389228D63C800483A91 /* URLSessionEngine.swift in Sources */,
 				2F0F0387228D473E00483A91 /* Artist.swift in Sources */,
+				2F7B05C5228ECEBE0046559B /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,12 +430,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2FFF63AF228B0012003529B2 /* Search.storyboard */ = {
+		2FFF63AF228B0012003529B2 /* Artist.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2FFF63B0228B0012003529B2 /* Base */,
 			);
-			name = Search.storyboard;
+			name = Artist.storyboard;
 			sourceTree = "<group>";
 		};
 		2FFF63B4228B0014003529B2 /* LaunchScreen.storyboard */ = {
