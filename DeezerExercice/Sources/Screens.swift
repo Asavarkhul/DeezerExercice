@@ -31,6 +31,7 @@ extension Screens {
         let repository = ArtistSearchRepository(networkClient: context.networkClient)
         let viewModel = ArtistSearchViewModel(repository: repository)
         viewController.viewModel = viewModel
+        viewController.imageProvider = context.imageProvider
         return viewController
     }
 }

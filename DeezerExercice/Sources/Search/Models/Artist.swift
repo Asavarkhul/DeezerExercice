@@ -16,6 +16,6 @@ struct Artist: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case pictureURLString = "picture_small"
+        case pictureURLString = "picture_medium"
     }
 }

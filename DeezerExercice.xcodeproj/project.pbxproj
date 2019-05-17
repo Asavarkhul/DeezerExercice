@@ -15,6 +15,7 @@
 		2F0F038E228D641700483A91 /* HTTPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F038D228D641700483A91 /* HTTPEngine.swift */; };
 		2F0F0390228D826100483A91 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F038F228D826100483A91 /* HTTPResponse.swift */; };
 		2F0F0392228D82DB00483A91 /* ArtistSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F0391228D82DB00483A91 /* ArtistSearchRepository.swift */; };
+		2F154F94228EB30600FEE98E /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F154F93228EB30600FEE98E /* ImageRepository.swift */; };
 		2F77BD9A228B129F00DCCE7A /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */; };
 		2F77BD9C228B131B00DCCE7A /* ArtistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */; };
 		2F77BD9E228B1F3F00DCCE7A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */; };
@@ -55,6 +56,7 @@
 		2F0F038D228D641700483A91 /* HTTPEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEngine.swift; sourceTree = "<group>"; };
 		2F0F038F228D826100483A91 /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		2F0F0391228D82DB00483A91 /* ArtistSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchRepository.swift; sourceTree = "<group>"; };
+		2F154F93228EB30600FEE98E /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		2F77BD9B228B131B00DCCE7A /* ArtistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsViewController.swift; sourceTree = "<group>"; };
 		2F77BD9D228B1F3F00DCCE7A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -98,12 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F0F0380228BF53D00483A91 /* Helpers */ = {
+		2F0F0380228BF53D00483A91 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				2F0F0381228BF5C100483A91 /* ImageProvider.swift */,
+				2F154F93228EB30600FEE98E /* ImageRepository.swift */,
 			);
-			path = Helpers;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		2F0F0385228D472E00483A91 /* Models */ = {
@@ -136,8 +139,8 @@
 		2F77BD9F228B1FC300DCCE7A /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				2FBE3CD8228DB06A0057CE42 /* Cells */,
 				2F0F0393228D82FA00483A91 /* Details */,
+				2FBE3CD8228DB06A0057CE42 /* Cells */,
 				2F0F0385228D472E00483A91 /* Models */,
 				2F77BD99228B129F00DCCE7A /* ArtistSearchViewController.swift */,
 				2FBE3CD6228DA3A40057CE42 /* ArtistSearchDataSource.swift */,
@@ -223,7 +226,7 @@
 				2FBE3CD4228DA0AF0057CE42 /* Context.swift */,
 				2F859AAA228B5964001277CB /* Screens.swift */,
 				2F77BD9F228B1FC300DCCE7A /* Search */,
-				2F0F0380228BF53D00483A91 /* Helpers */,
+				2F0F0380228BF53D00483A91 /* Images */,
 				2F859AB0228B5BEA001277CB /* Network */,
 			);
 			path = Sources;
@@ -354,6 +357,7 @@
 				2F77BD9C228B131B00DCCE7A /* ArtistDetailsViewController.swift in Sources */,
 				2FBE3CD7228DA3A40057CE42 /* ArtistSearchDataSource.swift in Sources */,
 				2F0F0384228C655F00483A91 /* Promise.swift in Sources */,
+				2F154F94228EB30600FEE98E /* ImageRepository.swift in Sources */,
 				2F859AAD228B5A34001277CB /* ArtistSearchViewModel.swift in Sources */,
 				2FBE3CD3228D9C570057CE42 /* ArtistInfos.swift in Sources */,
 				2F0F0382228BF5C100483A91 /* ImageProvider.swift in Sources */,

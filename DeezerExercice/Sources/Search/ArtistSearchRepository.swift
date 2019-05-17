@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ArtistSearchRepositoryType {
     func getArtists(for name: String, success: @escaping ([Artist]) -> Void, failure: @escaping (() -> Void))
@@ -44,3 +45,6 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
         }
     }
 }
+
+
+

@@ -27,6 +27,10 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
 
     // MARK: - Public properties
 
+    var imageProvider: ImageProvider
+
+    var didSelectItemAtIndex: ((Int) -> Void)?
+
     func update(with items: [Item]) {
         self.items = items.map { item in
             switch item {
@@ -34,6 +38,12 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
                 return .artist(visibleArtist: artist)
             }
         }
+    }
+
+    // MARK: - Initializer
+
+    init(imageProvider: ImageProvider) {
+        self.imageProvider = imageProvider
     }
 
     // MARK: - UICollectionViewDataSource
@@ -52,8 +62,18 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
         case .artist(visibleArtist: let artist):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell",
                                                           for: indexPath) as! ArtistCollectionViewCell
-            cell.nameLabel.text = artist.name
+            cell.configure(with: artist, at: index, imageProvider: imageProvider)
             return cell
         }
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item
+        guard indexPath.item < items.count else {
+            fatalError()
+        }
+
+        didSelectItemAtIndex?(index)
+    }
 }
+

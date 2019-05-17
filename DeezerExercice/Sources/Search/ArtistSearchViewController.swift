@@ -18,7 +18,11 @@ final class ArtistSearchViewController: UIViewController {
 
     var viewModel: ArtistSearchViewModel!
 
-    private lazy var source = ArtistSearchDataSource()
+    var imageProvider: ImageProvider!
+
+    private lazy var source: ArtistSearchDataSource = {
+        return ArtistSearchDataSource(imageProvider: imageProvider)
+    }()
 
     // MARK: - View life cycle
 
@@ -34,7 +38,7 @@ final class ArtistSearchViewController: UIViewController {
     }
 
     private func bind(to source: ArtistSearchDataSource) {
-        
+        source.didSelectItemAtIndex = viewModel.didSelectItem
     }
 
     private func bind(to viewModel: ArtistSearchViewModel) {

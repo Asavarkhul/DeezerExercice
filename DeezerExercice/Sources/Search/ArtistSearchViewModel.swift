@@ -59,7 +59,7 @@ final class ArtistSearchViewModel {
 
     func viewDidLoad() {
         isLoading?(true)
-        repository.getArtists(for: "Toto", success: { [weak self] artists in
+        repository.getArtists(for: "toto", success: { [weak self] artists in
             self?._items = ArtistSearchViewModel.initialItems(from: artists)
             self?.isLoading?(false)
         }, failure: { [weak self] in
@@ -74,6 +74,10 @@ final class ArtistSearchViewModel {
                                                   name: $0.name,
                                                   pictureURLString: $0.pictureURLString))
         }
+    }
+
+    func didSelectItem(at index: Int) {
+        
     }
 }
 

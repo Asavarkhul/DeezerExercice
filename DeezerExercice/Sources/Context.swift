@@ -10,9 +10,16 @@ import Foundation
 
 final class Context {
 
+    // MARK: - Public properties
+
     let networkClient: HTTPClient
 
-    init(networkClient: HTTPClient) {
+    let imageProvider: ImageProvider
+
+    // MARK: - Initializer
+
+    init(networkClient: HTTPClient, imageProvider: ImageProvider) {
         self.networkClient = networkClient
+        self.imageProvider = imageProvider
     }
 }

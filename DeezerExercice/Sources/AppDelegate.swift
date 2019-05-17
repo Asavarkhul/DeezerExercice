@@ -15,13 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var context: Context!
     var window: UIWindow?
 
+    // MARK: - Private properties
+    
+    private var imageCache: NSCache<Key, Object>!
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
+        imageCache = NSCache<Key, Object>()
 
         let client = HTTPClient(engine: .urlSession(.default))
-        context = Context(networkClient: client)
+
+        let imageRepository = ImageRepository(networkClient: client)
+        let imageProvider = ImageProvider(repository: imageRepository,
+                                          cache: self.imageCache)
+
+        context = Context(networkClient: client, imageProvider: imageProvider)
 
         coordinator = AppCoordinator(presenter: window!,
                                      context: context)
