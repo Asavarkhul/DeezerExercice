@@ -44,13 +44,31 @@ final class ArtistCoordinator {
 
     // MARK: - Artist Details
 
-    private func showDetails() {
-        
+    private func showDetails(for artistID: Int) {
+        let viewController = screens.createArtistDetailsViewController(with: artistID, delegate: self)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
+    // MARK: - Alert
+
+    private func showAlert(for type: AlertType) {
+        let alert = screens.createAlert(for: type)
+        navigationController.visibleViewController?.present(alert, animated: true, completion: nil)
     }
 }
 
 extension ArtistCoordinator: ArtistSearchScreenDelegate {
+    func artistScreenShouldDisplayAlert(for type: AlertType) {
+        showAlert(for: type)
+    }
+    
     func artistSearchScreenDidSelectArtist(for id: Int) {
-        
+        showDetails(for: id)
+    }
+}
+
+extension ArtistCoordinator: ArtistDetailsScreenDelegate {
+    func artistDetailsScreenShouldDisplayAlert(for type: AlertType) {
+        showAlert(for: type)
     }
 }

@@ -110,33 +110,40 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-22-yTR">
                                                     <rect key="frame" x="8" y="8" width="398" height="61.666666666666657"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-hi-csf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="28" height="61.666666666666664"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                            <nil key="textColor"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-hi-csf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="61.666666666666664"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="Dk9-7O-OSx"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8Gj-Xq-coe">
-                                                            <rect key="frame" x="50" y="0.0" width="294" height="61.666666666666664"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8Gj-Xq-coe">
+                                                            <rect key="frame" x="47" y="0.0" width="297" height="61.666666666666664"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Phantom of the opera" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-Dh-yHo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="240.33333333333334" height="43.666666666666664"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="40.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron Maiden" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVW-W7-IeG">
-                                                                    <rect key="frame" x="0.0" y="43.666666666666664" width="80.666666666666671" height="18"/>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="0.0" y="48.333333333333336" width="61.666666666666664" height="13.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                    <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0B-Ny-51A">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0B-Ny-51A">
                                                             <rect key="frame" x="366" y="0.0" width="32" height="61.666666666666664"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <state key="normal" title="Play"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="RC9-XX-6da"/>
+                                                            </constraints>
+                                                            <state key="normal" image="play"/>
+                                                            <connections>
+                                                                <action selector="playStopTrack:" destination="61T-mf-NUp" eventType="touchUpInside" id="m0W-7h-49b"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -148,6 +155,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="6AW-22-yTR" secondAttribute="trailing" constant="8" id="Wvu-Cd-Wap"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="albumTitleLabel" destination="gVW-W7-IeG" id="baJ-pi-AVv"/>
+                                            <outlet property="playStopTrackButton" destination="b0B-Ny-51A" id="GJW-SN-0xi"/>
+                                            <outlet property="positionLabel" destination="i7X-hi-csf" id="UHU-Az-Th1"/>
+                                            <outlet property="titleLabel" destination="Uhs-Dh-yHo" id="nOg-Qk-8gO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -163,10 +176,16 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="WAc-gI-KA1" id="fdh-CN-a4P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4w-Zn-VzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495.6521739130435" y="162.72321428571428"/>
+            <point key="canvasLocation" x="1495.6521739130435" y="162.22826086956522"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="32" height="32"/>
+    </resources>
 </document>

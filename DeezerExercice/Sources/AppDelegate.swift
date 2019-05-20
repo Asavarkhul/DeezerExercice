@@ -27,11 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let client = HTTPClient(engine: .urlSession(.default))
 
+        let requestBuilder = DZRRequestBuilder()
+
         let imageRepository = ImageRepository(networkClient: client)
         let imageProvider = ImageProvider(repository: imageRepository,
                                           cache: self.imageCache)
 
-        context = Context(networkClient: client, imageProvider: imageProvider)
+        let audioPlayerRepository = AudioPlayerRepository(networkClient: client)
+        let audioPlayer = AudioPlayer(repository: audioPlayerRepository)
+        
+        context = Context(networkClient: client,
+                          requestBuilder: requestBuilder,
+                          imageProvider: imageProvider,
+                          audioPlayer: audioPlayer)
 
         coordinator = AppCoordinator(presenter: window!,
                                      context: context)
