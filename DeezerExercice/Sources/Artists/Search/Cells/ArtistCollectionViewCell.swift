@@ -45,6 +45,15 @@ final class ArtistCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = 5
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.lightGray.cgColor
+        nameLabel.layer.borderWidth = 0.5
+        nameLabel.layer.borderColor = UIColor.lightGray.cgColor
+    }
+
     // MARK: - View life cycle
 
     override func prepareForReuse() {

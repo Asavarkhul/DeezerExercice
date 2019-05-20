@@ -26,6 +26,10 @@ final class TrackTableViewCell: UITableViewCell {
 
     private var viewModel: TrackViewModel!
 
+    private let playImage = UIImage(named: "play")
+
+    private let stopImage = UIImage(named: "stop")
+
     // MARK: - Configuration
 
     func configure(with viewModel: TrackViewModel) {
@@ -48,11 +52,12 @@ final class TrackTableViewCell: UITableViewCell {
         }
 
         viewModel.playingState = { [weak self] state in
+            guard let self = self else { return }
             switch state {
             case .play:
-                self?.playStopTrackButton.setImage(UIImage(named: "play")!, for: .normal)
+                self.playStopTrackButton.setImage(self.playImage, for: .normal)
             case .stop:
-                self?.playStopTrackButton.setImage(UIImage(named: "stop")!, for: .normal)
+                self.playStopTrackButton.setImage(self.stopImage, for: .normal)
             }
         }
     }
@@ -64,7 +69,7 @@ final class TrackTableViewCell: UITableViewCell {
         titleLabel.text = nil
         albumTitleLabel.text = nil
         positionLabel.text = nil
-        playStopTrackButton.setImage(UIImage(named: "play")!, for: .normal)
+        playStopTrackButton.setImage(playImage, for: .normal)
     }
 
     // MARK: - Actions

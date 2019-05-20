@@ -76,4 +76,3 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
         didSelectItemAtIndex?(index)
     }
 }
-
