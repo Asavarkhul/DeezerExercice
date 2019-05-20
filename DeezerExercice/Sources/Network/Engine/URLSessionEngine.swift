@@ -43,6 +43,23 @@ final class URLSessionEngine: HTTPEngine {
         token.willDeallocate = { task.cancel() }
     }
 
+    func download(request: URLRequest, cancelledBy token: RequestCancellationToken, completionHandler: @escaping DownloadCompletionHandler) {
+        let task = session.downloadTask(with: request) { (url, urlResponse, error) in
+            if urlResponse != nil {
+                guard let httpUrlResponse = urlResponse as? HTTPURLResponse else {
+                    completionHandler(url, nil, URLSessionEngineError.invalidURLResponseType)
+                    return
+                }
+                completionHandler(url, httpUrlResponse, error)
+            } else {
+                completionHandler(url, nil, error)
+            }
+        }
+
+        task.resume()
+        token.willDeallocate = { task.cancel() }
+    }
+
     // MARK: - Deinit
 
     deinit {

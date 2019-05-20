@@ -15,11 +15,16 @@ class HTTPClientTests: XCTestCase {
 
     private let client = HTTPClient(engine: .urlSession(.default))
 
+    private let requestBuilder = URLRequestBuilder()
+
     func test() {
         let expectation = self.expectation(description: "received data response")
-        let request = URLRequest(url: URL(string:"https://httpbin.org")!,
-                                 cachePolicy: .reloadIgnoringCacheData,
-                                 timeoutInterval: 4)
+        let httpRequest = try! HTTPRequest(baseURL: URL(string:"https://httpbin.org")!,
+                                           path: "get",
+                                           method: .GET,
+                                           parameters: nil,
+                                           timeout: 4)
+        let request = try! requestBuilder.buildURLRequest(from: httpRequest)
 
         retry(block: { (retry, fulfill) in
             self.client
@@ -39,9 +44,11 @@ class HTTPClientTests: XCTestCase {
 
     func testu() {
         let expectation = self.expectation(description: "received codable response")
-        let request = URLRequest(url: URL(string:"https://httpbin.org")!,
-                                 cachePolicy: .reloadIgnoringCacheData,
-                                 timeoutInterval: 4)
+        let httpRequest = try! HTTPRequest(baseURL: URL(string: "https://httpbin.org/post")!,
+                                           path: "post",
+                                           method: .POST,
+                                           parameters: HTTPRequestParameters(value: ["key": "value"]))
+        let request = try! requestBuilder.buildURLRequest(from: httpRequest)
 
         struct ResponseObject: Codable {
             let json: NestedResponseObject
@@ -50,7 +57,7 @@ class HTTPClientTests: XCTestCase {
         struct NestedResponseObject: Codable {
             let key: String
         }
-
+        
         retry(block: { (retry, fulfill) in
             self.client
                 .executeTask(request, cancelledBy: self.cancellationToken)

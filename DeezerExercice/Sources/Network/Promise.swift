@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Promise {
+class Promise<T> {
     
     enum Result {
-        case value(Data, Int?)
-        case error(Error, Data?, Int?)
+        case value(T, Int?)
+        case error(Error, T?, Int?)
     }
     
     // MARK: - Properties
@@ -27,13 +27,13 @@ class Promise {
     }
     
     // MARK: - Public
-    
-    func resolve(with value: Data, statusCode: Int?) {
+
+    func resolve(with value: T, statusCode: Int?) {
         result = .value(value, statusCode)
     }
     
-    func reject(with error: Error, data: Data?, statusCode: Int?) {
-        result = .error(error, data, statusCode)
+    func reject(with error: Error, value: T?, statusCode: Int?) {
+        result = .error(error, value, statusCode)
     }
     
     func observe(with callback: @escaping (Result) -> Void) {

@@ -12,9 +12,13 @@ public enum HTTPEngineType {
     case urlSession(URLSessionConfiguration)
 }
 
+struct UnreachableError: Error {}
+
 final class HTTPClient {
 
     private let engine: HTTPEngine
+
+    private let urlRequestBuilder = URLRequestBuilder()
 
     init(engine: HTTPEngineType = .urlSession(.default)) {
         switch engine {
@@ -23,59 +27,52 @@ final class HTTPClient {
         }
     }
 
-    func executeTask(_ request: URLRequest, cancelledBy cancellationToken: RequestCancellationToken) -> ExecutableRequest {
-        let promise = Promise()
+    func executeTask(_ request: HTTPRequest, cancelledBy cancellationToken: RequestCancellationToken) -> ExecutableRequest {
+        let promise = Promise<Data>()
 
-        // ⚠️ Here we should add a throwable part for building URLRequest and provide corresponding promise.
+        do {
+            let urlRequest = try urlRequestBuilder.buildURLRequest(from: request)
+
+            engine.send(request: urlRequest, cancelledBy: cancellationToken) { (data, httpURLResponse, error) in
+                if let data = data {
+                    promise.resolve(with: data, statusCode: httpURLResponse?.statusCode)
+                } else {
+                    promise.reject(with: UnreachableError(), value: data, statusCode: httpURLResponse?.statusCode)
+                }
+            }
+        } catch {
+            promise.reject(with: error, value: nil, statusCode: nil)
+        }
+
+        return ExecutableRequest(promise: promise)
+    }
+
+    func executeTask(_ request: URLRequest, cancelledBy cancellationToken: RequestCancellationToken) -> ExecutableRequest {
+        let promise = Promise<Data>()
 
         engine.send(request: request, cancelledBy: cancellationToken) { (data, httpURLResponse, error) in
             if let data = data {
                 promise.resolve(with: data, statusCode: httpURLResponse?.statusCode)
             } else {
-                promise.reject(with: UnreachableError(), data: data, statusCode: httpURLResponse?.statusCode)
+                promise.reject(with: UnreachableError(), value: data, statusCode: httpURLResponse?.statusCode)
             }
         }
 
         return ExecutableRequest(promise: promise)
     }
-}
 
-struct UnreachableError: Error {}
+    func downloadTask(_ request: URLRequest, cancelledBy cancellationToken: RequestCancellationToken) -> ExecutableDownloadRequest {
+        let promise = Promise<URL>()
 
-final class ExecutableRequest {
-
-    private let responsePromise: Promise
-
-    init(promise: Promise) {
-        self.responsePromise = promise
-    }
-
-    func processCodableResponse<D: Codable>(callback: @escaping (HTTPResponse<D>) -> Void) {
-        responsePromise.observe { result in
-            switch result {
-            case .value(let data, let statusCode):
-                do {
-                    let object = try JSONDecoder().decode(D.self, from: data)
-                    callback(HTTPResponse(result: .success(object), originalData: data, statusCode: statusCode))
-                } catch {
-                    callback(HTTPResponse(result: .failure(error), originalData: data, statusCode: statusCode))
-                }
-            case .error(let error, let data, let statusCode):
-                callback(HTTPResponse(result: .failure(error), originalData: data, statusCode: statusCode))
+        engine.download(request: request, cancelledBy: cancellationToken) { (url, urlResponse, error) in
+            if let url = url {
+                promise.resolve(with: url, statusCode: urlResponse?.statusCode)
+            } else {
+                promise.reject(with: UnreachableError(), value: url, statusCode: urlResponse?.statusCode)
             }
         }
-    }
 
-    public func processDataResponse(callback: @escaping (HTTPResponse<Data>) -> Void) {
-        responsePromise.observe { (result) in
-            switch result {
-            case .value(let data, let statusCode):
-                let object = data
-                callback(HTTPResponse(result: .success(object), originalData: data, statusCode: statusCode))
-            case .error(let error, let data, let statusCode):
-                callback(HTTPResponse(result: .failure(error), originalData: data, statusCode: statusCode))
-            }
-        }
+        return ExecutableDownloadRequest(promise: promise)
     }
 }
 
