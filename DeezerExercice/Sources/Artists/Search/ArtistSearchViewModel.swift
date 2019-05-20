@@ -39,10 +39,6 @@ final class ArtistSearchViewModel {
         case artist(artistItem: ArtistItem)
     }
 
-    enum NextScreen: Equatable {
-        case alert(title: String, message: String)
-    }
-
     // MARK: - Initializer
 
     init(repository: ArtistSearchRepositoryType, delegate: ArtistSearchScreenDelegate?) {
@@ -52,22 +48,23 @@ final class ArtistSearchViewModel {
 
     // MARK: - Outputs
 
+    var searchPlaceHolder: ((String) -> Void)?
+
     var visibleItems: (([VisibleItem]) -> Void)?
-
-    var isLoading: ((Bool) -> Void)?
-
-    var navigateTo: ((NextScreen) -> Void)?
 
     // MARK: - Inputs
 
     func viewDidLoad() {
-        isLoading?(true)
-        repository.getArtists(for: "toto", success: { [weak self] artists in
+        didSearchArtist(with: "all")
+        searchPlaceHolder?("Search an Artist name here 🤘") // This should be localized 🇫🇷
+    }
+
+    func didSearchArtist(with name: String) {
+        let name = name.components(separatedBy: CharacterSet.letters.inverted).joined()
+        repository.getArtists(for: name, success: { [weak self] artists in
             self?._items = ArtistSearchViewModel.initialItems(from: artists)
-            self?.isLoading?(false)
-        }, failure: { [weak self] in
-            self?.navigateTo?(.alert(title: "Alert", message: "A very very bad thing happened.. 🙈"))
-            self?.isLoading?(false)
+            }, failure: { [weak self] in
+                self?.delegate?.artistScreenShouldDisplayAlert(for: .networkError)
         })
     }
 

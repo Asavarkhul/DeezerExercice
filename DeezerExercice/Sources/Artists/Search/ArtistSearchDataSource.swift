@@ -54,7 +54,7 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = indexPath.item
-        guard indexPath.item < items.count else {
+        guard index < items.count else {
             fatalError()
         }
 

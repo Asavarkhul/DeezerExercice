@@ -24,6 +24,8 @@ final class ArtistSearchViewController: UIViewController {
         return ArtistSearchDataSource(imageProvider: imageProvider)
     }()
 
+    private lazy var searchController = UISearchController(searchResultsController: nil)
+
     // MARK: - View life cycle
 
     override func viewDidLoad() {
@@ -37,6 +39,19 @@ final class ArtistSearchViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+
+        searchController.searchBar.delegate = self
+
+        definesPresentationContext = true
+    }
+
     private func bind(to source: ArtistSearchDataSource) {
         source.didSelectItemAtIndex = viewModel.didSelectItem
     }
@@ -45,8 +60,23 @@ final class ArtistSearchViewController: UIViewController {
         viewModel.visibleItems = { [weak self] visibleItems in
             self?.source.update(with: visibleItems)
             DispatchQueue.main.async {
+                self?.collectionView.contentOffset = .zero
                 self?.collectionView.reloadData()
             }
+        }
+
+        viewModel.searchPlaceHolder = { [weak self] placeholder in
+            self?.searchController.searchBar.placeholder = placeholder
+        }
+    }
+}
+
+extension ArtistSearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchController.searchBar.text else { return }
+        viewModel.didSearchArtist(with: text)
+        DispatchQueue.main.async {
+            self.searchController.isActive = false
         }
     }
 }

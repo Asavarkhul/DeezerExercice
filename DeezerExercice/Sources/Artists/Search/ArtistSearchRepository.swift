@@ -18,27 +18,36 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
     // MARK: - Properties
     
     private let networkClient: HTTPClient
-    
+
+    private let requestBuilder: DZRRequestBuilder
+
+    private let urlRequestBuilder = URLRequestBuilder()
+
     private let cancellationToken = RequestCancellationToken()
     
     // MARK: - Init
     
-    init(networkClient: HTTPClient) {
+    init(networkClient: HTTPClient, requestBuilder: DZRRequestBuilder) {
         self.networkClient = networkClient
+        self.requestBuilder = requestBuilder
     }
     
-    // MARK: - ArtistRepositoryType
+    // MARK: - ArtistSearchRepositoryType
     
     func getArtists(for name: String, success: @escaping ([Artist]) -> Void, failure: @escaping (() -> Void)) {
+        let endpoint = ArtistSearchEndpoint(name: name)
 
-        let request = URLRequest(url: URL(string: "https://api.deezer.com/search/artist?q=\(name)")!)
+        guard
+            let httpRequest = self.requestBuilder.buildRequest(for: endpoint),
+            let urlRequest = try? self.urlRequestBuilder.buildURLRequest(from: httpRequest)
+            else { failure() ; return }
         
         networkClient
-            .executeTask(request, cancelledBy: cancellationToken)
-            .processCodableResponse { (response: HTTPResponse<ArtistInfos>) in
+            .executeTask(urlRequest, cancelledBy: cancellationToken)
+            .processCodableResponse { (response: HTTPResponse<ArtistResponse>) in
                 switch response.result {
-                case .success( let artistInfos):
-                    success(artistInfos.data)
+                case .success(let artistResponse):
+                    success(artistResponse.artists)
                 case .failure(_):
                     failure()
                 }
