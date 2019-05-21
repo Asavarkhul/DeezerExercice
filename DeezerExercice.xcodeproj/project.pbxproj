@@ -46,6 +46,20 @@
 		2F859AAB228B5964001277CB /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AAA228B5964001277CB /* Screens.swift */; };
 		2F859AAD228B5A34001277CB /* ArtistSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AAC228B5A34001277CB /* ArtistSearchViewModel.swift */; };
 		2F859AB2228B5BF8001277CB /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F859AB1228B5BF8001277CB /* HTTPClient.swift */; };
+		2FB7D8DA2293E5B1009E61B0 /* MockContextDepencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8D92293E5B1009E61B0 /* MockContextDepencies.swift */; };
+		2FB7D8DC2293E720009E61B0 /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8DB2293E720009E61B0 /* ImageRepositoryTests.swift */; };
+		2FB7D8DE2293E9A8009E61B0 /* MockImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8DD2293E9A8009E61B0 /* MockImageRepository.swift */; };
+		2FB7D8E02293EA81009E61B0 /* ImageProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8DF2293EA81009E61B0 /* ImageProviderTests.swift */; };
+		2FB7D8E32293F126009E61B0 /* AudioPlayerRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8E22293F126009E61B0 /* AudioPlayerRepositoryTests.swift */; };
+		2FB7D8E52293F1E0009E61B0 /* AudioPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8E42293F1E0009E61B0 /* AudioPlayerTests.swift */; };
+		2FB7D8E72293F216009E61B0 /* MockAudioRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8E62293F216009E61B0 /* MockAudioRepository.swift */; };
+		2FB7D8E92293F285009E61B0 /* MockFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8E82293F285009E61B0 /* MockFileManager.swift */; };
+		2FB7D8ED22943B4F009E61B0 /* daft_punk_preview.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FB7D8EC22943B4F009E61B0 /* daft_punk_preview.mp3 */; };
+		2FB7D8F022944076009E61B0 /* AlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8EF22944076009E61B0 /* AlertTests.swift */; };
+		2FB7D8F32294413C009E61B0 /* ScreensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8F22294413C009E61B0 /* ScreensTests.swift */; };
+		2FB7D8F62294433C009E61B0 /* DZRRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8F52294433C009E61B0 /* DZRRequestBuilderTests.swift */; };
+		2FB7D8FA22944693009E61B0 /* ArtistSearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8F922944693009E61B0 /* ArtistSearchRepositoryTests.swift */; };
+		2FB7D8FC229447F0009E61B0 /* ArtistSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7D8FB229447F0009E61B0 /* ArtistSearchViewModelTests.swift */; };
 		2FBE3CD3228D9C570057CE42 /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CD2228D9C570057CE42 /* ArtistResponse.swift */; };
 		2FBE3CD5228DA0AF0057CE42 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CD4228DA0AF0057CE42 /* Context.swift */; };
 		2FBE3CD7228DA3A40057CE42 /* ArtistSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBE3CD6228DA3A40057CE42 /* ArtistSearchDataSource.swift */; };
@@ -110,6 +124,20 @@
 		2F859AAA228B5964001277CB /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		2F859AAC228B5A34001277CB /* ArtistSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewModel.swift; sourceTree = "<group>"; };
 		2F859AB1228B5BF8001277CB /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		2FB7D8D92293E5B1009E61B0 /* MockContextDepencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContextDepencies.swift; sourceTree = "<group>"; };
+		2FB7D8DB2293E720009E61B0 /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryTests.swift; sourceTree = "<group>"; };
+		2FB7D8DD2293E9A8009E61B0 /* MockImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageRepository.swift; sourceTree = "<group>"; };
+		2FB7D8DF2293EA81009E61B0 /* ImageProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderTests.swift; sourceTree = "<group>"; };
+		2FB7D8E22293F126009E61B0 /* AudioPlayerRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerRepositoryTests.swift; sourceTree = "<group>"; };
+		2FB7D8E42293F1E0009E61B0 /* AudioPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerTests.swift; sourceTree = "<group>"; };
+		2FB7D8E62293F216009E61B0 /* MockAudioRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAudioRepository.swift; sourceTree = "<group>"; };
+		2FB7D8E82293F285009E61B0 /* MockFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileManager.swift; sourceTree = "<group>"; };
+		2FB7D8EC22943B4F009E61B0 /* daft_punk_preview.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = daft_punk_preview.mp3; sourceTree = "<group>"; };
+		2FB7D8EF22944076009E61B0 /* AlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTests.swift; sourceTree = "<group>"; };
+		2FB7D8F22294413C009E61B0 /* ScreensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensTests.swift; sourceTree = "<group>"; };
+		2FB7D8F52294433C009E61B0 /* DZRRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZRRequestBuilderTests.swift; sourceTree = "<group>"; };
+		2FB7D8F922944693009E61B0 /* ArtistSearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchRepositoryTests.swift; sourceTree = "<group>"; };
+		2FB7D8FB229447F0009E61B0 /* ArtistSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewModelTests.swift; sourceTree = "<group>"; };
 		2FBE3CD2228D9C570057CE42 /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 		2FBE3CD4228DA0AF0057CE42 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		2FBE3CD6228DA3A40057CE42 /* ArtistSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchDataSource.swift; sourceTree = "<group>"; };
@@ -216,7 +244,6 @@
 		2F77BD9F228B1FC300DCCE7A /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				2F3F8AAE2292A6B9002F448B /* Alert */,
 				2F7B05CC228ECF320046559B /* Search */,
 				2F0F0393228D82FA00483A91 /* Details */,
 				2F7B05CF228ECF680046559B /* ArtistCoordinator.swift */,
@@ -278,6 +305,77 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		2FB7D8D72293E551009E61B0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8DB2293E720009E61B0 /* ImageRepositoryTests.swift */,
+				2FB7D8DF2293EA81009E61B0 /* ImageProviderTests.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2FB7D8D82293E595009E61B0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8D92293E5B1009E61B0 /* MockContextDepencies.swift */,
+				2FB7D8DD2293E9A8009E61B0 /* MockImageRepository.swift */,
+				2FB7D8E62293F216009E61B0 /* MockAudioRepository.swift */,
+				2FB7D8E82293F285009E61B0 /* MockFileManager.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2FB7D8E12293F0EC009E61B0 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8E22293F126009E61B0 /* AudioPlayerRepositoryTests.swift */,
+				2FB7D8E42293F1E0009E61B0 /* AudioPlayerTests.swift */,
+				2FB7D8EC22943B4F009E61B0 /* daft_punk_preview.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		2FB7D8EE2294406B009E61B0 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8EF22944076009E61B0 /* AlertTests.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		2FB7D8F12294412E009E61B0 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8F22294413C009E61B0 /* ScreensTests.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2FB7D8F42294432F009E61B0 /* DZR */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8F52294433C009E61B0 /* DZRRequestBuilderTests.swift */,
+			);
+			path = DZR;
+			sourceTree = "<group>";
+		};
+		2FB7D8F722944676009E61B0 /* Artists */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8F82294467F009E61B0 /* Search */,
+			);
+			path = Artists;
+			sourceTree = "<group>";
+		};
+		2FB7D8F82294467F009E61B0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2FB7D8F922944693009E61B0 /* ArtistSearchRepositoryTests.swift */,
+				2FB7D8FB229447F0009E61B0 /* ArtistSearchViewModelTests.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		2FBE3CD8228DB06A0057CE42 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +426,14 @@
 			isa = PBXGroup;
 			children = (
 				2FFF63C2228B0014003529B2 /* Info.plist */,
+				2FB7D8F722944676009E61B0 /* Artists */,
+				2FB7D8F42294432F009E61B0 /* DZR */,
+				2FB7D8F12294412E009E61B0 /* Screens */,
+				2FB7D8EE2294406B009E61B0 /* Alert */,
 				2FBE3CE1228DBBF80057CE42 /* Network */,
+				2FB7D8D72293E551009E61B0 /* Images */,
+				2FB7D8E12293F0EC009E61B0 /* Audio */,
+				2FB7D8D82293E595009E61B0 /* Mocks */,
 			);
 			path = DeezerExerciceTests;
 			sourceTree = "<group>";
@@ -342,6 +447,7 @@
 				2FBE3CD4228DA0AF0057CE42 /* Context.swift */,
 				2F859AAA228B5964001277CB /* Screens.swift */,
 				2F77BD9F228B1FC300DCCE7A /* Artists */,
+				2F3F8AAE2292A6B9002F448B /* Alert */,
 				2F250A8522918AC400CA11C9 /* Audio Player */,
 				2F0F0380228BF53D00483A91 /* Images */,
 				2F859AB0228B5BEA001277CB /* Network */,
@@ -451,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB7D8ED22943B4F009E61B0 /* daft_punk_preview.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,9 +620,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FBE3CE0228DBA770057CE42 /* Utilities.swift in Sources */,
+				2FB7D8E92293F285009E61B0 /* MockFileManager.swift in Sources */,
+				2FB7D8FC229447F0009E61B0 /* ArtistSearchViewModelTests.swift in Sources */,
 				2FBE3CDE228DB9C30057CE42 /* URLSessionEngineTests.swift in Sources */,
+				2FB7D8F32294413C009E61B0 /* ScreensTests.swift in Sources */,
+				2FB7D8FA22944693009E61B0 /* ArtistSearchRepositoryTests.swift in Sources */,
+				2FB7D8DA2293E5B1009E61B0 /* MockContextDepencies.swift in Sources */,
+				2FB7D8DC2293E720009E61B0 /* ImageRepositoryTests.swift in Sources */,
+				2FB7D8E02293EA81009E61B0 /* ImageProviderTests.swift in Sources */,
+				2FB7D8F022944076009E61B0 /* AlertTests.swift in Sources */,
+				2FB7D8DE2293E9A8009E61B0 /* MockImageRepository.swift in Sources */,
 				2FBE3CE3228DBC530057CE42 /* HTTPClientTests.swift in Sources */,
 				2FBE3CDC228DB29B0057CE42 /* RequestCancellationTokenTests.swift in Sources */,
+				2FB7D8F62294433C009E61B0 /* DZRRequestBuilderTests.swift in Sources */,
+				2FB7D8E32293F126009E61B0 /* AudioPlayerRepositoryTests.swift in Sources */,
+				2FB7D8E72293F216009E61B0 /* MockAudioRepository.swift in Sources */,
+				2FB7D8E52293F1E0009E61B0 /* AudioPlayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

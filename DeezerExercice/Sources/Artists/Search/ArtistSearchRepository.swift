@@ -14,9 +14,9 @@ protocol ArtistSearchRepositoryType {
 }
 
 final class ArtistSearchRepository: ArtistSearchRepositoryType {
-    
+
     // MARK: - Properties
-    
+
     private let networkClient: HTTPClient
 
     private let requestBuilder: DZRRequestBuilder
@@ -24,16 +24,16 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
     private let urlRequestBuilder = URLRequestBuilder()
 
     private let cancellationToken = RequestCancellationToken()
-    
+
     // MARK: - Init
-    
+
     init(networkClient: HTTPClient, requestBuilder: DZRRequestBuilder) {
         self.networkClient = networkClient
         self.requestBuilder = requestBuilder
     }
-    
+
     // MARK: - ArtistSearchRepositoryType
-    
+
     func getArtists(for name: String, success: @escaping ([Artist]) -> Void, failure: @escaping (() -> Void)) {
         let endpoint = ArtistSearchEndpoint(name: name)
 
@@ -41,7 +41,7 @@ final class ArtistSearchRepository: ArtistSearchRepositoryType {
             let httpRequest = self.requestBuilder.buildRequest(for: endpoint),
             let urlRequest = try? self.urlRequestBuilder.buildURLRequest(from: httpRequest)
             else { failure() ; return }
-        
+
         networkClient
             .executeTask(urlRequest, cancelledBy: cancellationToken)
             .processCodableResponse { (response: HTTPResponse<ArtistResponse>) in

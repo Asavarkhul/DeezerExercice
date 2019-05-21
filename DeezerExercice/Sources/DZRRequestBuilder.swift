@@ -16,8 +16,8 @@ final class DZRRequestBuilder {
 
     // MARK: - Initializer
 
-    init() {
-        self.url = URL(string: "https://api.deezer.com/")!
+    init(url: URL = URL(string: "https://api.deezer.com/")!) {
+        self.url = url
     }
 
     // MARK: - Build request

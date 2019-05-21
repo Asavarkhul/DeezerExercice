@@ -22,7 +22,7 @@ final class ArtistDetailsViewModel {
 
     private let artistID: Int
 
-    private let audioPlayer: AudioPlayerType
+    private let audioPlayer: AudioPlayer
 
     private let repository: ArtistDetailsRepositoryType
 
@@ -48,7 +48,7 @@ final class ArtistDetailsViewModel {
     // MARK: - Initializer
 
     init(artistID: Int,
-         audioPlayer: AudioPlayerType,
+         audioPlayer: AudioPlayer,
          repository: ArtistDetailsRepositoryType,
          delegate: ArtistDetailsScreenDelegate?) {
         self.artistID = artistID

@@ -12,8 +12,15 @@ public enum AudioPlayerError: Error {
     case cannotBuildValidPlayerWithData(data: Data)
 }
 
+enum PlayerState {
+    case playing
+    case downloading
+    case stop
+}
+
 protocol AudioPlayerType: class {
     var delegate: AudioPlayerDelegate? { get set }
+    var isPlaying: Bool { get }
     func startPlayingTrack(at url: URL)
     func stop()
 }
@@ -57,19 +64,13 @@ final class AudioPlayer: NSObject, AudioPlayerType, AVAudioPlayerDelegate {
     private func downloadPreviewSound(for url: URL,
                               success: @escaping () -> Void,
                               failure: @escaping () -> Void) {
-        guard let destinationURL = buildDestinationURL(with: url) else { return }
-
-        if fileManager.fileExists(atPath: destinationURL.path) {
-            success()
-        } else {
-            repository.downloadSound(at: url) { [weak self] location in
-                guard let location = location else { return }
-                do {
-                    try self?.fileManager.moveItem(at: location, to: destinationURL)
-                    success()
-                } catch {
-                    failure()
-                }
+        repository.downloadSound(at: url) { [weak self] location in
+            guard let location = location, let destinationURL = self?.buildDestinationURL(with: url) else { return }
+            do {
+                try self?.fileManager.moveItem(at: location, to: destinationURL)
+                success()
+            } catch {
+                failure()
             }
         }
     }
@@ -100,7 +101,6 @@ final class AudioPlayer: NSObject, AudioPlayerType, AVAudioPlayerDelegate {
 
     private func play() {
         player?.delegate = self
-        player?.prepareToPlay()
         player?.play()
     }
 
@@ -110,6 +110,10 @@ final class AudioPlayer: NSObject, AudioPlayerType, AVAudioPlayerDelegate {
 
     deinit {
         player?.stop()
+    }
+
+    var isPlaying: Bool {
+        return player?.isPlaying ?? false
     }
 
     // MARK: - Rate Observer
