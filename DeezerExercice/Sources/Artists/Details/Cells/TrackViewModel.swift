@@ -20,7 +20,7 @@ final class TrackViewModel {
 
     // MARK: - Properties
 
-    enum AudioState {
+    enum AudioState: Equatable {
         case play
         case stop
     }

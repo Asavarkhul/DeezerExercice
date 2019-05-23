@@ -62,7 +62,7 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
         case .artist(visibleArtist: let artist):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCollectionViewCell",
                                                           for: indexPath) as! ArtistCollectionViewCell
-            cell.configure(with: artist, at: index, imageProvider: imageProvider)
+            cell.configure(with: artist, imageProvider: imageProvider)
             return cell
         }
     }
@@ -74,5 +74,12 @@ final class ArtistSearchDataSource: NSObject, UICollectionViewDataSource, UIColl
         }
 
         didSelectItemAtIndex?(index)
+    }
+}
+
+extension ArtistSearchDataSource: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 32) / 3
+        return CGSize(width: width, height: width + 60.0)
     }
 }

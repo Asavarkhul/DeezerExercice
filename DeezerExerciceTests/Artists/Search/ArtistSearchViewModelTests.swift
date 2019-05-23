@@ -11,11 +11,11 @@ import XCTest
 
 final class ArtistSearchViewModelTests: XCTestCase {
 
-    func test() {
+    func testGivenAnArtistSearchViewModel_WhenViewDidLoad_ThenSearchPlaceHolderIsCorrectlyReturned() {
         let repository = MockArtistSearchRepository()
         let viewModel = ArtistSearchViewModel(repository: repository,
                                               delegate: nil)
-        let expectation = self.expectation(description: "Coucou")
+        let expectation = self.expectation(description: "Expected text")
 
         viewModel.searchPlaceHolder = { text in
             XCTAssertEqual(text, "Search an Artist name here 🤘")
@@ -27,19 +27,13 @@ final class ArtistSearchViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
 
-    func teste() {
+    func testGivenAnArtistSearchViewModel_WhenViewDidLoad_ThenVisibleItemsIsCorrectlyEmpty() {
         let repository = MockArtistSearchRepository()
-        repository.artists = [Artist(id: 1, name: "Toto", pictureURLString: "url"),
-                              Artist(id: 2, name: "Iron Maiden", pictureURLString: "url")]
         let viewModel = ArtistSearchViewModel(repository: repository,
                                               delegate: nil)
-        let expectation = self.expectation(description: "Coucou")
+        let expectation = self.expectation(description: "Expected items")
 
-        let expectedResult: [ArtistSearchViewModel.VisibleItem] =
-            [.artist(visibleArtist: VisibleArtist(name: "Toto",
-                                                  pictureURLString: "url")),
-             .artist(visibleArtist: VisibleArtist(name: "Iron Maiden",
-                                                  pictureURLString: "url"))]
+        let expectedResult: [ArtistSearchViewModel.VisibleItem] = []
 
         viewModel.visibleItems = { items in
             XCTAssertEqual(items, expectedResult)
@@ -51,7 +45,37 @@ final class ArtistSearchViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1.0, handler: nil)
     }
 
-    func testr() {
+    func testGivenAnArtistSearchViewModel_WhenViewDidLoad_ThenVisibleItemsIsCorrectlyReturnecd() {
+        let repository = MockArtistSearchRepository()
+        repository.artists = [Artist(id: 1, name: "Toto", pictureURLString: "url"),
+                              Artist(id: 2, name: "Iron Maiden", pictureURLString: "url")]
+        let viewModel = ArtistSearchViewModel(repository: repository,
+                                              delegate: nil)
+        let expectation = self.expectation(description: "Expected items")
+        
+        let expectedResult: [ArtistSearchViewModel.VisibleItem] =
+            [.artist(visibleArtist: VisibleArtist(name: "Toto",
+                                                  pictureURLString: "url")),
+             .artist(visibleArtist: VisibleArtist(name: "Iron Maiden",
+                                                  pictureURLString: "url"))]
+
+        var counter = 0
+        viewModel.visibleItems = { items in
+            if counter == 1 {
+                XCTAssertEqual(items, expectedResult)
+                expectation.fulfill()
+            }
+            counter+=1
+        }
+        
+        viewModel.viewDidLoad()
+
+        viewModel.didSearchArtist(with: "Toto")
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+    }
+
+    func testGivenAnArtistSearchViewModel_WhenDidSelectItemAtIndex_ThenDelegateIsCorrectlySent() {
         let repository = MockArtistSearchRepository()
         repository.artists = [Artist(id: 1, name: "Toto", pictureURLString: "url"),
                               Artist(id: 2, name: "Iron Maiden", pictureURLString: "url")]
@@ -61,13 +85,15 @@ final class ArtistSearchViewModelTests: XCTestCase {
         
         viewModel.viewDidLoad()
 
+        viewModel.didSearchArtist(with: "Toto")
+
         viewModel.didSelectItem(at: 0)
         
         XCTAssertEqual(delegate.artistID, 1)
     }
 }
 
-fileprivate class MockArtistSearchRepository: ArtistSearchRepositoryType {
+fileprivate final class MockArtistSearchRepository: ArtistSearchRepositoryType {
 
     var isSuccess = true
     var artists: [Artist] = []
@@ -77,7 +103,7 @@ fileprivate class MockArtistSearchRepository: ArtistSearchRepositoryType {
     }
 }
 
-fileprivate class MockArtistSearchDelegate: ArtistSearchScreenDelegate {
+fileprivate final class MockArtistSearchDelegate: ArtistSearchScreenDelegate {
 
     var artistID: Int? = nil
 

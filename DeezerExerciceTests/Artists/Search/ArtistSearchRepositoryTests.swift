@@ -22,6 +22,6 @@ final class ArtistSearchRepositoryTests: XCTestCase {
             XCTFail()
         })
 
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 }

@@ -77,8 +77,7 @@ final class ArtistDetailsViewModel {
             self.titleText?(album.title)
             self._items = ArtistDetailsViewModel.initialItems(from: album)
         }, failure: { [weak self] in
-            guard let self = self else { return }
-            self.delegate?.artistDetailsScreenShouldDisplayAlert(for: .networkError)
+            self?.delegate?.artistDetailsScreenShouldDisplayAlert(for: .networkError)
         })
     }
 

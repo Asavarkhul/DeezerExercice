@@ -20,17 +20,14 @@ final class ArtistCollectionViewCell: UICollectionViewCell {
 
     private var artist: VisibleArtist!
 
-    private var index: Int?
-
     private var imageProvider: ImageProvider?
 
     private let cancellationToken = RequestCancellationToken()
 
     // MARK: - Configure
 
-    func configure(with artist: VisibleArtist, at index: Int, imageProvider: ImageProvider?) {
+    func configure(with artist: VisibleArtist, imageProvider: ImageProvider?) {
         self.artist = artist
-        self.index = index
         self.imageProvider = imageProvider
         configureCell()
     }

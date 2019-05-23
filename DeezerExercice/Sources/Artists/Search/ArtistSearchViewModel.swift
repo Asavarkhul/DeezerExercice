@@ -55,8 +55,8 @@ final class ArtistSearchViewModel {
     // MARK: - Inputs
 
     func viewDidLoad() {
-        didSearchArtist(with: "all")
         searchPlaceHolder?("Search an Artist name here 🤘") // This should be localized 🇫🇷
+        visibleItems?([])
     }
 
     func didSearchArtist(with name: String) {

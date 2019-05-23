@@ -32,7 +32,6 @@ final class ArtistSearchViewController: UIViewController {
         super.viewDidLoad()
         collectionView.dataSource = source
         collectionView.delegate = source
-        configureLayout(for: collectionView)
 
         bind(to: source)
         bind(to: viewModel)
@@ -68,16 +67,6 @@ final class ArtistSearchViewController: UIViewController {
 
         viewModel.searchPlaceHolder = { [weak self] placeholder in
             self?.searchController.searchBar.placeholder = placeholder
-        }
-    }
-
-    // MARK: - UI configuration
-
-    private func configureLayout(for collectionView: UICollectionView) {
-        DispatchQueue.main.async {
-            let width = (collectionView.frame.width - 32) / 3
-            guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-            layout.itemSize = CGSize(width: width, height: width + 60.0)
         }
     }
 }
